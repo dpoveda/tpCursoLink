@@ -3,9 +3,9 @@ package ar.utn.edu.cursolink.tp.ordendecompra;
 
 import java.util.Objects;
 
-import ar.utn.edu.cursolink.exception.CuponYaUsadoException;
-import ar.utn.edu.cursolink.exception.NoPuedeAplicarsePromoException;
-import ar.utn.edu.cursolink.exception.TarjetaNoEncontradaException;
+import ar.utn.edu.cursolink.tp.exception.CuponYaUsadoException;
+import ar.utn.edu.cursolink.tp.exception.NoPuedeAplicarsePromoException;
+import ar.utn.edu.cursolink.tp.exception.TarjetaNoEncontradaException;
 import ar.utn.edu.cursolink.tp.promocion.Promocion;
 import ar.utn.edu.cursolink.tp.usuario.cliente.Cliente;
 

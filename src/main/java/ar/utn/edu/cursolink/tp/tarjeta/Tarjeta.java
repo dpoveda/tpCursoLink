@@ -1,6 +1,6 @@
 package ar.utn.edu.cursolink.tp.tarjeta;
 
-import ar.utn.edu.cursolink.exception.TipoDeTarjetaIncorrectoException;
+import ar.utn.edu.cursolink.tp.exception.TipoDeTarjetaIncorrectoException;
 import ar.utn.edu.cursolink.tp.mediodepago.MedioDePago;
 import ar.utn.edu.cursolink.tp.usuario.cliente.Cliente;
 

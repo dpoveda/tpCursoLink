@@ -3,7 +3,7 @@ package ar.utn.edu.cursolink.tp.carrito;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import ar.utn.edu.cursolink.exception.TieneProductoRepetidoException;
+import ar.utn.edu.cursolink.tp.exception.TieneItemRepetidoException;
 
 public class Carrito {
 	private Collection<ItemCarrito> items;
@@ -32,9 +32,9 @@ public class Carrito {
 
 
 	//Methods
-	public void agregarItem(ItemCarrito item) throws TieneProductoRepetidoException {
+	public void agregarItem(ItemCarrito item) throws TieneItemRepetidoException {
 		if(tieneProductoRepetido(item)) {
-			throw new TieneProductoRepetidoException();
+			throw new TieneItemRepetidoException();
 		}
 		items.add(item);
 	}

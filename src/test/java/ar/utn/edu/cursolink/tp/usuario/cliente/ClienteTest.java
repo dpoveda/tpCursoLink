@@ -1,6 +1,6 @@
 package ar.utn.edu.cursolink.tp.usuario.cliente;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collection;

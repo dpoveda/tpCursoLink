@@ -8,13 +8,13 @@ import java.util.Collection;
 
 import org.junit.jupiter.api.Test;
 
-import ar.utn.edu.cursolink.exception.CuponYaUsadoException;
-import ar.utn.edu.cursolink.exception.NoPuedeGenerarLaOrdenException;
-import ar.utn.edu.cursolink.exception.TipoDeTarjetaIncorrectoException;
 import ar.utn.edu.cursolink.tp.carrito.Carrito;
 import ar.utn.edu.cursolink.tp.carrito.ItemCarrito;
-import ar.utn.edu.cursolink.tp.descuento.DescuentoFijo;
-import ar.utn.edu.cursolink.tp.descuento.DescuentoPorcentaje;
+import ar.utn.edu.cursolink.tp.descuento.fijo.DescuentoFijo;
+import ar.utn.edu.cursolink.tp.descuento.porcentaje.DescuentoPorcentaje;
+import ar.utn.edu.cursolink.tp.exception.CuponYaUsadoException;
+import ar.utn.edu.cursolink.tp.exception.NoPuedeGenerarLaOrdenException;
+import ar.utn.edu.cursolink.tp.exception.TipoDeTarjetaIncorrectoException;
 import ar.utn.edu.cursolink.tp.mediodepago.MedioDePago;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 import ar.utn.edu.cursolink.tp.producto.Producto;

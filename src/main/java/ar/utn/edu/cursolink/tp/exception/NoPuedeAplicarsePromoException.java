@@ -1,4 +1,4 @@
-package ar.utn.edu.cursolink.exception;
+package ar.utn.edu.cursolink.tp.exception;
 
 public class NoPuedeAplicarsePromoException extends Exception {
 

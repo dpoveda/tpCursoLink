@@ -1,7 +1,7 @@
 package ar.utn.edu.cursolink.tp.promocion;
 
-import ar.utn.edu.cursolink.exception.CuponYaUsadoException;
-import ar.utn.edu.cursolink.exception.TarjetaNoEncontradaException;
+import ar.utn.edu.cursolink.tp.exception.CuponYaUsadoException;
+import ar.utn.edu.cursolink.tp.exception.TarjetaNoEncontradaException;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 
 public abstract class Promocion {
