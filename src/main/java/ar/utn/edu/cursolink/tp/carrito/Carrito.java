@@ -2,14 +2,32 @@ package ar.utn.edu.cursolink.tp.carrito;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import ar.utn.edu.cursolink.tp.exception.TieneItemRepetidoException;
 
+@Entity
 public class Carrito {
-	private Collection<ItemCarrito> items;
-
+	
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="carr_id")
+	private Integer id;
+	
+	@OneToMany
+	private List<ItemCarrito> items;
 	
 	//Constructor
+	protected Carrito() {
+		super();
+	}
+
 	public Carrito(Collection<ItemCarrito> items) {
 		super();
 		this.items = new ArrayList<ItemCarrito>();
@@ -18,14 +36,14 @@ public class Carrito {
 	
 	//Getters and Setters
 	//Clone
-	public Collection<ItemCarrito> getItems() { //me da una copia de items, utilizar esto cuando quiero usar la collection items
-		   Collection<ItemCarrito> items2 = new ArrayList<ItemCarrito>();
+	public List<ItemCarrito> getItems() { //me da una copia de items, utilizar esto cuando quiero usar la collection items
+		List<ItemCarrito> items2 = new ArrayList<ItemCarrito>();
 		   items2.addAll(this.items);
 		   return items2;
 	}
 
 	
-	public void setItems(Collection<ItemCarrito> items) {
+	public void setItems(List<ItemCarrito> items) {
 		this.items = items;
 	}
 
@@ -63,10 +81,8 @@ public class Carrito {
 	@Override
 	public String toString() {
 		return "Carrito [items=" + items + "]";
-		
 	}
 
 
-	
 
 }

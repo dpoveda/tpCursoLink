@@ -1,4 +1,4 @@
-package ar.utn.edu.cursolink.tp.usuario.proveedor;
+package ar.utn.edu.cursolink.tp.proveedor;
 
 import java.util.List;
 

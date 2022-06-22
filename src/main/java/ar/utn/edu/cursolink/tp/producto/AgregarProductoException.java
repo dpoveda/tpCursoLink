@@ -1,6 +1,6 @@
 package ar.utn.edu.cursolink.tp.producto;
 
-import ar.utn.edu.cursolink.tp.usuario.proveedor.Proveedor;
+import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
 
 public class AgregarProductoException extends Exception {
 

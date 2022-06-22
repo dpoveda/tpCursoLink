@@ -9,14 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+//@Entity
 public abstract class Descuento{
 	
 
 	//esto es nuevo recien agregado
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="desc_id")
-	private Integer id;
+//	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+//	@Column(name="desc_id")
+//	private Integer id;
 	
 	
 	protected LocalDate comienzo; 

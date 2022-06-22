@@ -9,15 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table; 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
-import ar.utn.edu.cursolink.tp.usuario.proveedor.Proveedor;
+import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
 
 
 @Entity
-@Table(name="productos")
 public class Producto {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,7 +26,7 @@ public class Producto {
 	@Column(name="prod_nombre")
 	private String nombre;
 	
-	@Min(value = 0, message = "El precio no debe ser menor a cero")
+	@Min(value = 1, message = "El precio no debe ser menor a cero")
 	@Column(name="prod_precio")
 	private double precio;
 	

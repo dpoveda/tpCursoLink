@@ -3,28 +3,53 @@ package ar.utn.edu.cursolink.tp.ordendecompra;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import ar.utn.edu.cursolink.tp.exception.CuponYaUsadoException;
 import ar.utn.edu.cursolink.tp.exception.NoPuedeAplicarsePromoException;
 import ar.utn.edu.cursolink.tp.exception.TarjetaNoEncontradaException;
 import ar.utn.edu.cursolink.tp.promocion.Promocion;
 import ar.utn.edu.cursolink.tp.usuario.cliente.Cliente;
 
+@Entity
 public class OrdenDeCompra {
 	
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="orden_id")
+	private Integer id;
+	
+	@NotBlank
+	@Column(name="orden_codigo")
 	private String codigo;
+	
+	@OneToOne
+	@NotNull
 	private Cliente cliente;
+	
+	@Transient
 	private Promocion promo;
 	
 	
 	//Constructors
+	protected OrdenDeCompra() { 
+		super();
+	}
+	
 	public OrdenDeCompra(Cliente cliente) {
 		super();
 		this.setCliente(cliente);
 	}
 	
 	
-	//Getters and Setters
-			
+	//Getters and Setters		
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -34,12 +59,9 @@ public class OrdenDeCompra {
 		this.cliente = cliente;
 	}
 
-
-
 	public String getCodigo() {
 		return codigo;
 	}
-
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
@@ -49,11 +71,10 @@ public class OrdenDeCompra {
 		return promo;
 	}
 
-
 	public void setPromo(Promocion promo) {
 		this.promo = promo;
 	}
-
+	
 
 	//Methods
 
@@ -74,11 +95,8 @@ public class OrdenDeCompra {
 		} catch (TarjetaNoEncontradaException e) {
 		return montoTotalSinPromo;
 		}
-		
-	
-	
+			
 	}
-	
 
 	
 	
@@ -99,6 +117,8 @@ public class OrdenDeCompra {
 		OrdenDeCompra other = (OrdenDeCompra) obj;
 		return Objects.equals(codigo, other.codigo);
 	}
+
+	
 
 
 

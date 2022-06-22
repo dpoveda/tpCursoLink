@@ -2,14 +2,37 @@ package ar.utn.edu.cursolink.tp.carrito;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 import ar.utn.edu.cursolink.tp.producto.Producto;
 
+@Entity
 public class ItemCarrito {
 
-	private Producto producto;
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="item_id")
+	private Integer id;
+	
+	@NotNull
+	@OneToOne 
+	private Producto producto; 
+	
+	@Min(value = 1, message = "La cantidad no debe ser menor a cero")
+	@Column(name="item_cantidad")
 	private int cantidad;
 	
 	//Constructor
+	protected ItemCarrito() {
+		super();
+	}
+	
 	public ItemCarrito(Producto producto, int cantidad) {
 		super();
 		this.setProducto(producto);

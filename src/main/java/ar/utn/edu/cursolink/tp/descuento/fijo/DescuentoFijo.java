@@ -14,7 +14,7 @@ import ar.utn.edu.cursolink.tp.descuento.Descuento;
 
 
 @Entity
-@Table(name="descuentos_fijos")
+//@Table(name="descuentos_fijos")
 public class DescuentoFijo extends Descuento {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)

@@ -18,9 +18,9 @@ import ar.utn.edu.cursolink.tp.exception.TipoDeTarjetaIncorrectoException;
 import ar.utn.edu.cursolink.tp.mediodepago.MedioDePago;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 import ar.utn.edu.cursolink.tp.producto.Producto;
+import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
 import ar.utn.edu.cursolink.tp.tarjeta.Tarjeta;
 import ar.utn.edu.cursolink.tp.usuario.cliente.Cliente;
-import ar.utn.edu.cursolink.tp.usuario.proveedor.Proveedor;
 
 public class PromocionTest {
 	

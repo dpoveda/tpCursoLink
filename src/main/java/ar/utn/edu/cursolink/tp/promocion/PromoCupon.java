@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,10 +17,10 @@ import javax.validation.constraints.Size;
 import ar.utn.edu.cursolink.tp.descuento.Descuento;
 import ar.utn.edu.cursolink.tp.exception.CuponYaUsadoException;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
-import ar.utn.edu.cursolink.tp.usuario.proveedor.Proveedor;
+import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
 
 @Entity
-@Table(name="promociones_cupon")
+//@Table(name="promociones_cupon")
 public class PromoCupon extends Promocion{
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,8 +43,9 @@ public class PromoCupon extends Promocion{
 	
 	
 	//no me esta creando los descuentos que antes creaba, todo por la clase descuento, ver
-	@ManyToOne
-	@NotNull
+//	@ManyToOne
+//	@NotNull
+	@Transient
 	private Descuento tipoDescuento; 
 	
 	//Constructors

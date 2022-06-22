@@ -1,11 +1,20 @@
 package ar.utn.edu.cursolink.tp.usuario.cliente;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import ar.utn.edu.cursolink.tp.carrito.Carrito;
 import ar.utn.edu.cursolink.tp.carrito.ItemCarrito;
 import ar.utn.edu.cursolink.tp.exception.NoPuedeGenerarLaOrdenException;
@@ -13,24 +22,52 @@ import ar.utn.edu.cursolink.tp.mediodepago.MedioDePago;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 import ar.utn.edu.cursolink.tp.producto.Producto;
 import ar.utn.edu.cursolink.tp.tarjeta.Tarjeta;
-import ar.utn.edu.cursolink.tp.usuario.Usuario;
 
+@Entity
+public class Cliente {
 
-public class Cliente extends Usuario {
-
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="cliente_id")
+	private Integer id;
+	
+	@NotBlank
+	@Column(name="cliente_nombre")
 	private String nombre;
+	
+	@Column(name="cliente_dni")
 	private int dni;
+	
+	@Column(name="cliente_email")
 	private String email;
+	
+	@Column(name="cliente_telefono")
 	private int telefono;
+	
+	@Column(name="cliente_miembro")
 	private boolean miembro;
+	
+	@Column(name="cliente_medioDePago")
 	private MedioDePago medioDePago;
+	
+	@Column(name="cliente_montoBilletera")
+	@Min(value = 1, message = "El precio no debe ser menor a cero")
 	private double montoBilletera;
+	
+	@OneToMany(mappedBy="cliente")
 	private Set<Tarjeta> tarjetas;
+	
+	@OneToOne
 	private Carrito carrito; 
-	private Collection<OrdenDeCompra> comprasEfectuadas;
+	
+	@OneToMany(mappedBy="cliente")
+	private List<OrdenDeCompra> comprasEfectuadas;
 	
 	
 	//Constructors
+	protected Cliente() { 
+		super();
+	}
+	
 	public Cliente(String nombre) {
 		super();
 		this.nombre = nombre;
@@ -89,11 +126,11 @@ public class Cliente extends Usuario {
 		this.tarjetas = tarjetas;
 	}
 
-	public Collection<OrdenDeCompra> getComprasEfectuadas() {
+	public List<OrdenDeCompra> getComprasEfectuadas() {
 		return comprasEfectuadas;
 	}
 
-	public void setComprasEfectuadas(Collection<OrdenDeCompra> comprasEfectuadas) {
+	public void setComprasEfectuadas(List<OrdenDeCompra> comprasEfectuadas) {
 		this.comprasEfectuadas = comprasEfectuadas;
 	}
 
@@ -170,9 +207,6 @@ public class Cliente extends Usuario {
 	}
 
 
-
-	//podria hacer un metodo mostrarProductos() que me muestre todos los items del carrito, sus productos y cant
-	//y que me retorne esos items, despues ver si lo hago
 
 	
 }

@@ -5,7 +5,8 @@ import ar.utn.edu.cursolink.tp.exception.TarjetaNoEncontradaException;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 
 public abstract class Promocion {
-		
+
+	
 	public double aplicarPromocion(double base) throws CuponYaUsadoException {
 		return this.calcularPromo(base);
 	}

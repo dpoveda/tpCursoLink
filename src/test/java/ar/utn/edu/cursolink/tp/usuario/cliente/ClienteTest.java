@@ -12,7 +12,7 @@ import ar.utn.edu.cursolink.tp.carrito.ItemCarrito;
 import ar.utn.edu.cursolink.tp.mediodepago.MedioDePago;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 import ar.utn.edu.cursolink.tp.producto.Producto;
-import ar.utn.edu.cursolink.tp.usuario.proveedor.Proveedor;
+import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
 
 public class ClienteTest {
 	

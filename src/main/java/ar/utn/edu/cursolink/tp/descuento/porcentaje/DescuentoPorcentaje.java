@@ -13,7 +13,7 @@ import javax.validation.constraints.Min;
 import ar.utn.edu.cursolink.tp.descuento.Descuento;
 
 @Entity
-@Table(name="descuentos_porcentaje")
+//@Table(name="descuentos_porcentaje")
 public class DescuentoPorcentaje extends Descuento {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)

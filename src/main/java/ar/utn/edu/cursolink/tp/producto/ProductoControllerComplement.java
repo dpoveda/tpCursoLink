@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ar.utn.edu.cursolink.tp.usuario.proveedor.Proveedor;
-import ar.utn.edu.cursolink.tp.usuario.proveedor.RepoProveedor;
+import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
+import ar.utn.edu.cursolink.tp.proveedor.RepoProveedor;
 
 @RepositoryRestController
 public class ProductoControllerComplement {

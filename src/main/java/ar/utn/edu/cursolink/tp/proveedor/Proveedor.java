@@ -1,4 +1,4 @@
-package ar.utn.edu.cursolink.tp.usuario.proveedor;
+package ar.utn.edu.cursolink.tp.proveedor;
 
 import java.util.List;
 import java.util.Objects;
@@ -12,11 +12,9 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
 import ar.utn.edu.cursolink.tp.producto.Producto;
-//import ar.utn.edu.cursolink.tp.usuario.Rol;
-import ar.utn.edu.cursolink.tp.usuario.Usuario;
 
 @Entity
-public class Proveedor extends Usuario {
+public class Proveedor {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO) //ver si despues cambio el auto por identity, de esa forma me genera la clave primaria
 	@Column(name="prov_id") 
@@ -25,8 +23,6 @@ public class Proveedor extends Usuario {
 	@NotBlank
 	@Column(name="prov_nombre")
 	private String nombre;
-
-	//Rol nombreRol = Rol.PROVEEDOR;
 	
 	
 	@OneToMany(mappedBy="proveedor")
