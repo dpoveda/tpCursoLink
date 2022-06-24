@@ -1,24 +1,11 @@
 package ar.utn.edu.cursolink.tp.usuario;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-//@Table(name = "usuarios")
 public class Usuario { 
 	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="usuario_id")
-	private Integer id;
 	
 	private String username;
 	private String password;
 	private String tipo;
-	//protected Rol rol;
 	
 	
 	//Constructors

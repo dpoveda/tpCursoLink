@@ -4,12 +4,7 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,15 +15,8 @@ import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 import ar.utn.edu.cursolink.tp.proveedor.Proveedor;
 
 @Entity
-//@Table(name="promociones_cupon")
 public class PromoCupon extends Promocion{
 	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="promoCupon_id")
-	private Integer id;
-	
-	//todavia no puedo hacer que se creen promoscupon con cod diferentes
-	//quiero que el cod sea unico
 	@NotBlank
 	@Size(min = 6, max = 6)
 	@Column(name="promoCupon_codigo")
@@ -42,10 +30,7 @@ public class PromoCupon extends Promocion{
 	private boolean disponible = true;
 	
 	
-	//no me esta creando los descuentos que antes creaba, todo por la clase descuento, ver
-//	@ManyToOne
-//	@NotNull
-	@Transient
+	@ManyToOne
 	private Descuento tipoDescuento; 
 	
 	//Constructors
@@ -57,7 +42,7 @@ public class PromoCupon extends Promocion{
 		super();
 		this.codigo = codigo;
 		this.setProveedor(proveedor);
-		this.tipoDescuento = tipoDescuento;
+		this.setTipoDescuento(tipoDescuento);
 	}
 
 	//Getters and Setters
@@ -86,6 +71,14 @@ public class PromoCupon extends Promocion{
 	}
 	
 	
+	public Descuento getTipoDescuento() {
+		return tipoDescuento;
+	}
+
+	public void setTipoDescuento(Descuento tipoDescuento) {
+		this.tipoDescuento = tipoDescuento;
+	}
+
 	//Methods
 	@Override
 	protected double calcularPromo(double base) throws CuponYaUsadoException {

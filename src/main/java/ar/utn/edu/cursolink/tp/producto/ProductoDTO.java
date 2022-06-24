@@ -1,5 +1,6 @@
 package ar.utn.edu.cursolink.tp.producto;
 
+
 public interface ProductoDTO {
 
 	String getNombre();
@@ -7,6 +8,7 @@ public interface ProductoDTO {
 	double getPrecio();
 	
 	String getProveedor();
+	
 	
 
 }

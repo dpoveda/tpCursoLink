@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -311,7 +312,7 @@ public class PromocionTest {
 		
 		
 		DescuentoFijo descFijo = new DescuentoFijo(50);//mi desc es 50
-		Collection<Cliente> clientes = new ArrayList<Cliente>();
+		List<Cliente> clientes = new ArrayList<Cliente>();
 		
 		cliente.setCarrito(carrito);
 		PromoMembresia promoMembresia = new PromoMembresia(descFijo);
@@ -368,7 +369,7 @@ public class PromocionTest {
 		
 		DescuentoFijo descFijo = new DescuentoFijo(50);//mi desc es 50
 		
-		Collection<Cliente> clientes = new ArrayList<Cliente>();
+		List<Cliente> clientes = new ArrayList<Cliente>();
 		
 	
 		PromoMembresia promoMembresia = new PromoMembresia(descFijo);
@@ -423,7 +424,7 @@ public class PromocionTest {
 		
 		
 		DescuentoPorcentaje descPorcentaje = new DescuentoPorcentaje(0.1);//mi desc es 116 pesos con el desc de 0.1
-		Collection<Cliente> clientes = new ArrayList<Cliente>();
+		List<Cliente> clientes = new ArrayList<Cliente>();
 		
 		cliente.setCarrito(carrito);
 		PromoMembresia promoMembresia = new PromoMembresia(descPorcentaje);
@@ -479,7 +480,7 @@ public class PromocionTest {
 		
 		DescuentoPorcentaje descPorcentaje = new DescuentoPorcentaje(0.1);//mi desc es 116 pesos con el desc de 0.1
 		
-		Collection<Cliente> clientes = new ArrayList<Cliente>();
+		List<Cliente> clientes = new ArrayList<Cliente>();
 		
 		PromoMembresia promoMembresia = new PromoMembresia(descPorcentaje);
 		promoMembresia.setClientes(clientes);

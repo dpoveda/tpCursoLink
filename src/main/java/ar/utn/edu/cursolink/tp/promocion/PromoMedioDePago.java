@@ -1,11 +1,16 @@
 package ar.utn.edu.cursolink.tp.promocion;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
 import ar.utn.edu.cursolink.tp.descuento.Descuento;
 import ar.utn.edu.cursolink.tp.exception.TarjetaNoEncontradaException;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 
+@Entity
 public class PromoMedioDePago extends Promocion{
 	
+	@ManyToOne
 	private Descuento tipoDescuento; 
 	
 	//Constructor

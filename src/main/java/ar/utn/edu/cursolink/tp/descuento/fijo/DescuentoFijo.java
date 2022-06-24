@@ -4,23 +4,13 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.Min;
-
 import ar.utn.edu.cursolink.tp.descuento.Descuento;
 
 
 @Entity
-//@Table(name="descuentos_fijos")
 public class DescuentoFijo extends Descuento {
-	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="descFijo_id")
-	private Integer id;
-	
+
 	
 	@Min(value = 0, message = "El monto no debe ser menor a cero")
 	@Column(name="descFijo_monto")
@@ -54,4 +44,11 @@ public class DescuentoFijo extends Descuento {
 	public double descuento(double base) {	
 		return this.getMonto();
 	}
+
+	@Override
+	public String toString() {
+		return "DescuentoFijo [monto=" + monto + "]";
+	}
+	
+	
 }

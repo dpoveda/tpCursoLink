@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -34,7 +33,7 @@ public class OrdenDeCompra {
 	@NotNull
 	private Cliente cliente;
 	
-	@Transient
+	@OneToOne
 	private Promocion promo;
 	
 	
@@ -98,7 +97,6 @@ public class OrdenDeCompra {
 			
 	}
 
-	
 	
 	@Override
 	public int hashCode() {

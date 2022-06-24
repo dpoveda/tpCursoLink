@@ -13,5 +13,4 @@ public interface OrdenDeCompraDTO {
 	@Value("#{target.cliente.carrito}")
 	CarritoDTO getCarrito();
 	
-	//me faltaria que muestre el precio final
 }

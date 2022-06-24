@@ -1,6 +1,6 @@
 package ar.utn.edu.cursolink.tp.descuento;
 
-import java.io.Serializable;
+
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -8,15 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-//@Entity
-public abstract class Descuento{
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Descuento {
 	
 
-	//esto es nuevo recien agregado
-//	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-//	@Column(name="desc_id")
-//	private Integer id;
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="desc_id")
+	private Integer id;
 	
 	
 	protected LocalDate comienzo; 

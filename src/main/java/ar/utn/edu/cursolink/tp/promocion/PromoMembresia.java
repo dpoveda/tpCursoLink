@@ -1,15 +1,23 @@
 package ar.utn.edu.cursolink.tp.promocion;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import ar.utn.edu.cursolink.tp.descuento.Descuento;
 import ar.utn.edu.cursolink.tp.ordendecompra.OrdenDeCompra;
 import ar.utn.edu.cursolink.tp.usuario.cliente.Cliente;
 
+@Entity
 public class PromoMembresia extends Promocion{
 	
-	private Collection <Cliente> clientes;
+	@OneToMany
+	private List <Cliente> clientes;
+	
+	@ManyToOne
 	private Descuento tipoDescuento; 
 	
 	//Constructors
@@ -20,13 +28,13 @@ public class PromoMembresia extends Promocion{
 	
 	//Getters and setters
 	//Clone
-		public Collection<Cliente> getClientes() {
-			Collection<Cliente> clientes2 = new ArrayList<Cliente>();
+		public List<Cliente> getClientes() {
+			List<Cliente> clientes2 = new ArrayList<Cliente>();
 			clientes2.addAll(this.clientes);
 			return clientes2;
 		}
 
-		public void setClientes(Collection<Cliente> clientes) {
+		public void setClientes(List<Cliente> clientes) {
 			this.clientes = clientes;
 		}
 

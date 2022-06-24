@@ -134,7 +134,6 @@ public class Cliente {
 		this.comprasEfectuadas = comprasEfectuadas;
 	}
 
-
 	public double getMontoBilletera() {
 		return montoBilletera;
 	}
